@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Réservation | Auberge du jacana africain</title>
+    <link rel="stylesheet" href="../css/styles.css">
 
 </head>
 
@@ -35,7 +36,7 @@
                         <div class="dates">
                             <p class="arrive">
                                 <label for="date_arrive">Date d'arrivée : </label>
-                                <select name="date_arrive" id="date_arrive">
+                                <select name="date_arrive" id="date_arrive" required>
                                     <option value="jour">Jour</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -69,7 +70,7 @@
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                                <select name="date_arriver" id="date_arrive">
+                                <select name="date_arriver" id="date_arrive" required>
                                     <option value="mois">Mois</option>
                                     <option value="janvier">1</option>
                                     <option value="fevrier">2</option>
@@ -84,7 +85,7 @@
                                     <option value="novembre">11</option>
                                     <option value="decembre">12</option>
                                 </select>
-                                <select name="date_arrive" id="date_arrive">
+                                <select name="date_arrive" id="date_arrive" required>
                                     <option value="Année">Année</option>
                                     <option value="2023">2023</option>
                                     <option value="2024">2024</option>
@@ -92,7 +93,7 @@
                             </p>
                             <p class="depart">
                                 <label for="date_depart">Date de départ : </label>
-                                <select name="date_depart" id="date_depart">
+                                <select name="date_depart" id="date_depart" required>
                                     <option value="Jour">Jour</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -126,7 +127,7 @@
                                     <option value="30">30</option>
                                     <option value="31">31</option>
                                 </select>
-                                <select name="date_depart" id="date_depart">
+                                <select name="date_depart" id="date_depart" required>
                                     <option value="Mois">Mois</option>
                                     <option value="janvier">1</option>
                                     <option value="fevrier">2</option>
@@ -141,7 +142,7 @@
                                     <option value="novembre">11</option>
                                     <option value="decembre">12</option>
                                 </select>
-                                <select name="date_depart" id="date_depart">
+                                <select name="date_depart" id="date_depart" required>
                                     <option value="année">Années</option>
                                     <option value="2023">2023</option>
                                     <option value="2024">2024</option>
@@ -157,11 +158,11 @@
                 <div class="form-section">
                     <p>
                         <label for="adultes">Adultes (maximum 4):</label>
-                        <input type="number" max="4" id="adultes" name="adultes">
+                        <input type="number" max="4" id="adultes" name="adultes" required>
                     </p>
                     <p>
                         <label for="enfants">Enfants (maximum 5):</label>
-                        <input type="number" max="5" id="enfants" name="enfants">
+                        <input type="number" max="5" id="enfants" name="enfants" required>
                     </p>
 
 
@@ -181,7 +182,7 @@
                         <!-- Trois boutons radio pour le choix du type de chambre simple, double ou familiale 
                             Les boutons doivent être des images cliquables: utiliser images/types-de-chambre -->
                         <p class="types">
-                            <input type="radio" name="type_chambre" id="type_chambre">
+                            <input type="radio" name="type_chambre" id="type_chambre" required>
                             <label for="type_chambre">Simple</label>
                             <input type="radio" name="type_chambre" id="type_chambre">
                             <label for="type_chambre">Double</label>
@@ -208,22 +209,22 @@
 
                     <p>
                         <label for="prenom">Prénom :</label>
-                        <input type="text" id="prenom" name="prenom">
+                        <input type="text" id="prenom" name="prenom" minlength="2" required>
                     </p>
 
                     <p>
                         <label for="nom">Nom :</label>
-                        <input type="text" id="nom" name="nom">
+                        <input type="text" id="nom" name="nom" minlength="2" required>
                     </p>
 
                     <p>
                         <label for="email">Email :</label>
-                        <input type="email" id="email" name="email">
+                        <input type="email" id="email" name="email" required>
                     </p>
 
                     <p>
-                        <label for="telephone">Téléphone :</label>
-                        <input type="text" id="telephone" name="telephone">
+                        <label for="telephone">Téléphone (123-456-7890):</label>
+                        <input type="text" id="telephone" name="telephone" minlength="10" title="Exemple: 123-456-7890" pattern="\d{3}[\-]\d{3}[\-]\d{4}" required>
                     </p>
 
 
