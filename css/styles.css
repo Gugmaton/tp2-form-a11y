@@ -1,5 +1,43 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+@import url(normalize.css);
 @import url(utilitaires.css);
 @import url(typo.css);
-@import url(normalize.css);
+@import url(grille.css);
+@import url(composants/menu.css);
+
+
+/* Base commune aux pages */
+.signature {
+    display: flex;
+}
+.signature__logo {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icone {
+    display: inline-block;
+    width: 26px;
+    height: 24px;
+    background-image: url("../images/icones/good-warning-error.png");
+    background-size: cover;
+    position: relative;
+    top: 5px;
+}
+
+.icone--ok {
+    background-position: 0 0;
+}
+
+.icone--avertissement {
+    background-position: 49px 0;
+}
+
+.icone--erreur {
+    background-position: 101px 0;
+}
