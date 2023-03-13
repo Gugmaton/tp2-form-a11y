@@ -1,41 +1,3 @@
-.nav__control {
-    background-color: var(--couleur-bouton);
-
-    border: none;
-    padding: 10px;
-    min-width: 40px;
-
-    float: right;
-}
-
-@media (min-width: 600px) {
-    .nav__control {
-        display: none;
-    }
-}
-
-.nav__control:hover,
-.nav__control:active {
-    background-color: var(--nav-hover-background-color);
-}
-
-.nav__control:focus {
-    /* En mettant la règle outline: none;, les styles du navigateur
-     * pour les éléments en cours de focus sont effacés. Il faut alors
-     * les remplacer par d'autres styles qui peuvent être plus
-     * en accord avec la direction visuelle du projet.
-     */
-    outline: none;
-    /* AUTRES STYLES EN REMPLACEMENT DU OUTLINE */
-    /*
-     * Les règles outline-offset et outline permettent
-     * de modifier l'apparence du outline par défaut des navigateurs.
-     */
-    outline-offset: -5px;
-    outline: var(--nav-background-color) auto 5px;
-}
-
-/* Liste du menu */
 .nav__list {
     margin: 0;
     padding: 0;
@@ -47,13 +9,11 @@
 @media (min-width: 600px) {
     .nav__list {
         display: flex;
-        justify-content: space-between;
-        max-width: 1000px;
+        max-width: 900px;
         margin: auto;
     }
 
     .nav__list-item {
-        display: inline-block;
         flex-basis: 20%;
         margin: 0 0.5rem;
         text-align: center;
@@ -62,11 +22,12 @@
 
 /* Liens du menu */
 .nav__link {
-    color: var(--nav-color);
-    background-color: rgba(145, 0, 145, 0.2);
+    color: white;
+    background-color: rgba(200,200,200,0.3);
     display: block;
     padding: 5px 10px;
     width: 100%;
+    border-radius: 5px;
 }
 
 .nav__link:link,
@@ -75,26 +36,15 @@
 }
 
 .nav__link:hover {
-    color: #fff;
-    background-color: var(--nav-hover-background-color);
+    color: black;
+    background-color: white;
+    transition-duration: 0.5s;
+    transform: scale(1.05);
 }
 
 .nav__link:active {
     color: #fff;
-    background-color: magenta;
-}
-
-
-.nav__link:focus {
-    outline-offset: -5px;
-    outline: var(--nav-background-color) auto 5px;
-    box-shadow: none;
-}
-
-@media (min-width: 600px) {
-    .nav__link:focus {
-        outline-offset: 0;
-    }
+    background-color: darkgray;
 }
 
 /** Une classe nav__link--active
@@ -102,13 +52,13 @@
     pour l'item de menu actif
     **/
 .nav__link--active {
-    border-left: 5px solid var(--nav-border-color);
+    border-left: 5px darkgray;
 }
 
 @media (min-width: 600px) {
     .nav__link--active {
         border-left: none;
-        border-bottom: 5px solid var(--nav-border-color);
+        border-bottom: 3px solid darkgray;
     }
 }
 
@@ -121,15 +71,3 @@
  *** en l'absence de JavaScript le menu restera visible et accessible
  *** en présence de JavaScript le menu est caché
  */
-@media (max-width: 599px) {
-    .js .nav__list {
-        max-height: 100vh;
-        overflow: hidden;
-        transition: max-height 2s;
-    }
-
-    .js .nav--closed .nav__list {
-        max-height: 0;
-        transition: max-height 0.5s;
-    }
-}
